@@ -85,8 +85,8 @@ function verificaIntentoDeUsuario(){
 
     let numeroUsuario = parseInt(document.getElementById('numUsuario').value)
     if (numeroUsuario === numeroSecreto){
-        asignarTextoElemento('h1', 'Felicidades,adivinaste, este era: ' + numeroSecreto)
-        asignarTextoElemento('p', `Numero de intentos: ${intentoDeUsuario} ${(intentoDeUsuario === 1) ? 'vez' : 'veces'}`)
+        asignarTextoElemento('p', 'Felicidades, adivinaste el numero secreto: (' + numeroSecreto+`) ---- ¿Juegas Otra?`)
+        asignarTextoElemento('h1', `Numero de intentos: ${intentoDeUsuario} ${(intentoDeUsuario === 1) ? 'vez' : 'veces'}`)
         document.getElementById('NuevoJuegoBoton').disabled = false;
             return; // Sale de la función para evitar incrementar el intento
 
@@ -117,8 +117,8 @@ function flujoJuego() {
 
     // Si el usuario falla en el tercer intento, pierde
     if (intentoDeUsuario > 3) { 
-        asignarTextoElemento('h1', '❌ Perdiste, el número secreto era: ' + numeroSecreto);
-        asignarTextoElemento('p', `Número de intentos: ${intentoDeUsuario - 1} ${(intentoDeUsuario - 1 === 1) ? 'vez' : 'veces'}`);
+        asignarTextoElemento('p', '❌ Perdiste, el número secreto era: ' + numeroSecreto);
+        asignarTextoElemento('h1', `Número de intentos: ${intentoDeUsuario - 1} ${(intentoDeUsuario - 1 === 1) ? 'vez' : 'veces'}`);
         
         setTimeout(reiniciarJuego, 3000);
     }
