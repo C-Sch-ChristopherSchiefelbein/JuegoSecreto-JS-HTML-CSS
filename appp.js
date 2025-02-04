@@ -57,7 +57,7 @@ function generarNumSecreto(){
     console.log(ListaNumSecretos)
 
     if (ListaNumSecretos.length === numeroMaximoGenerado){ //si la lista esta llena, terminamos la funcion con un mensaje de juego completado
-        asignarTextoElemento('h1', '🎉 Juego completado, has adivinado todos los números secretos');
+        asignarTextoElemento('p', '🎉 Juego completado, has adivinado todos los números secretos');
         //pediremos al usuario que confirme si desea reiniciar el juego
         setTimeout(() => { //funcion anonima compacta, ()=>{} es igual a function(){} pero mas corto y limpio 
         let confirmaReinicioLimpio = confirm('¿Deseas reiniciar el juego?')
@@ -85,7 +85,7 @@ function verificaIntentoDeUsuario(){
 
     let numeroUsuario = parseInt(document.getElementById('numUsuario').value)
     if (numeroUsuario === numeroSecreto){
-        asignarTextoElemento('h1', 'Felicidades, adivinaste el numero secreto, este era: ' + numeroSecreto)
+        asignarTextoElemento('h1', 'Felicidades,adivinaste, este era: ' + numeroSecreto)
         asignarTextoElemento('p', `Numero de intentos: ${intentoDeUsuario} ${(intentoDeUsuario === 1) ? 'vez' : 'veces'}`)
         document.getElementById('NuevoJuegoBoton').disabled = false;
             return; // Sale de la función para evitar incrementar el intento
